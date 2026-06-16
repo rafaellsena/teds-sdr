@@ -9,13 +9,11 @@ def _setup():
     import marimo as mo
     import pandas as pd
     import plotly.express as px
-    from pathlib import Path
 
-    PARQUETS = Path(r"C:\Users\rafael.lsena\Documents\SNIDR\Projeto TEDs\Parquets")
-
-    df_teds   = pd.read_parquet(PARQUETS / "ted_analise_completa.parquet")
-    df_obras  = pd.read_parquet(PARQUETS / "obras_vinculadas_teds.parquet")
-    df_ev_ano = pd.read_parquet(PARQUETS / "ted_eventos_com_ano.parquet")
+    BASE = "https://raw.githubusercontent.com/rafaellsena/teds-sdr/main/"
+    df_teds   = pd.read_parquet(BASE + "ted_analise_completa.parquet")
+    df_obras  = pd.read_parquet(BASE + "obras_vinculadas_teds.parquet")
+    df_ev_ano = pd.read_parquet(BASE + "ted_eventos_com_ano.parquet")
 
     # Normalizar TEDs
     df_teds["aa_ano_plano_acao"]   = df_teds["aa_ano_plano_acao"].astype(int)
