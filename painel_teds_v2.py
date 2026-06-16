@@ -10,7 +10,7 @@ def _setup():
     import pandas as pd
     import plotly.express as px
 
-    BASE = "https://raw.githubusercontent.com/rafaellsena/teds-sdr/main/"
+    BASE = "https://rafaellsena.github.io/teds-sdr/"
     df_teds   = pd.read_parquet(BASE + "ted_analise_completa.parquet")
     df_obras  = pd.read_parquet(BASE + "obras_vinculadas_teds.parquet")
     df_ev_ano = pd.read_parquet(BASE + "ted_eventos_com_ano.parquet")
